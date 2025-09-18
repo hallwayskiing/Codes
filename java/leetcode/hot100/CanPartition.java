@@ -21,9 +21,9 @@ public class CanPartition {
 
         boolean[] dp = new boolean[target + 1];
         dp[0] = true;
-        for (int i = 1; i <= target; i++) {
-            for (int num:nums){
-                dp[i]|=dp[target]
+        for (int num : nums) {
+            for (int j = target; j >= num; j--) {
+                dp[j] = dp[j] || dp[j - num];
             }
         }
 
